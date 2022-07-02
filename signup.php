@@ -47,11 +47,11 @@
 	            <div class="form-group d-flex">
 					<div class="col-md-6 ">
 						<select name="dep" required="" class="form-control text-dark" style="color: black;">
-							<option>departement</option>
-							<option value="GC">genie civil et urbain</option>
-							<option value="GTEL/GEL">genie electrique et des telecommunication</option>
-							<option value="GIN">genie informatique</option>
-							<option value="GI/GM">genie industriel et mecanique</option>
+						<option>departement</option>
+						<option value="GC">genie civil et urbain</option>
+						<option value="GTEL/GEL">genie electrique et des telecommunication</option>
+						<option value="GIN">genie informatique</option>
+						<option value="GI/GM">genie industriel et mecanique</option> 	
 						</select>
 					</div>
 					<div class="col-md-6">
@@ -68,6 +68,9 @@
 				</div>
 			  </div>
 			  <div class="form-group d-flex">
+			  <div class="col-md-6 ">
+				<input type="file"  class="form-control" placeholder="ajouter une photo " name="fichier" required="">
+				</div>
 	            <div class="col-md-6">
 				<input type="submit" name="valider" class="form-control btn btn-primary submit px-3" value="s'inscrire" >
 				</div>

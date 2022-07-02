@@ -1,5 +1,9 @@
-<?php
- session_start();
+
+<?hp
+session_start();
+if (empty($_SESSION['auth'])) {
+   header('location: index.php');
+}
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -9,7 +13,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Soft-Tect Free Landing Page</title>
+        <title>these</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -53,7 +57,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="social-contact">
-                                <a href="#"><i class="fa fa-phone"></i>+011 54925849</a>
+                             <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret"><?= $_SESSION['nom']; ?><i class="caret"></i></span><span class="table-img"><img style="border: 2px solid black" src="../<?= $_SESSION['tof'] ?>"></span></a>
                                 <a href="#"><i class="fa fa-envelope"></i>contact@softech.com</a>
                             </div>
                         </div>
@@ -67,12 +71,12 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">POLYTECHNIQUE THESE</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo" /></a>
+                    <!-- <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo" /></a> -->
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,12 +84,12 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#features">PRODUCT</a></li>
-                        <li><a href="#service">Service</a></li>
-                        <li><a href="#price">PRICE</a></li>
-                        <li><a href="#business">Business</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li class="login"><a href="#">Sign In</a></li>
+                        <li><a href="thco">tout les theses</a></li>
+                        <li><a href="toutth.php">theses en cours</a></li>
+                        <li><a href="toutth.php">galerie</a></li>
+                        <li><a href="toutth.php">notification</a></li>
+                        <li><a href="toutth.php">publication</a></li>
+                        <li class="login"><a href="deconnexion.php">Sign out</a></li>
                     </ul>
 
                 </div><!-- /.navbar-collapse -->
@@ -101,7 +105,7 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="home-content">
 
-                                    <h1>Bring your Big Data to Life With Soft-Tech</h1>
+                                    <h1>THESE POLYTECHNIQUE</h1>
                                     <p>Blue Lance transforms your company's data into rich visuals for you to collect and organize so you can focus on what matters to you. Stay in the know, spot trends as they happen, and push your business further.</p>
 
                                     <div class="row">
@@ -128,329 +132,14 @@
         </header>
 
         <!-- Sections -->
-        <section id="features" class="features sections">
-            <div class="container">
-                <div class="row">
-                    <div class="main_features_content2">
-
-                        <div class="col-sm-6">
-                            <div class="single_features_left text-center">
-                                <img src="assets/images/feature-2.jpg" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 margin-top-60">
-                            <div class="single_features_right ">
-                                <h2>OUR PRODUCT</h2>
-                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                                <ul>
-                                    <li>Quisque volutpat mattis eros.</li>
-                                    <li>Nullam malesuada erat ut turpis.</li>
-                                    <li>Suspendisse urna nibh.</li>
-                                </ul>
-                                <div class="features_buttom">
-                                    <a href="" class="btn btn-default">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section><!--End of Features 2 Section -->
-        <section id="features" class="features sections">
-            <div class="container">
-                <div class="row">
-                    <div class="main_features_content2">
-
-
-
-                        <div class="col-sm-6 margin-top-60">
-                            <div class="single_features_right ">
-                                <h2>PRODUCT DESCRIPTIONS</h2>
-                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                                <ul>
-                                    <li>Quisque volutpat mattis eros.</li>
-                                    <li>Nullam malesuada erat ut turpis.</li>
-                                    <li>Suspendisse urna nibh.</li>
-                                </ul>
-                                <div class="features_buttom">
-                                    <a href="" class="btn btn-default">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="single_features_left text-center">
-                                <img src="assets/images/feature-1.jpg" alt="" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section><!--End of Features 2 Section -->
-
-
-        <section id="service" class="service2 sections lightbg">
-            <div class="container">
-                <div class="row">
-                    <div class="main_service2">
-                        <div class="head_title text-center">
-                            <h2>SERVICES WE PROVIDE</h2>
-                            <p>condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                        </div>
-
-                        <div class="service_content">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="single_service2">
-                                    <div class="single_service_left">
-                                        <img src="assets/images/flaticon1.png" alt="" />
-                                    </div>
-                                    <div class="single_service_right">
-                                        <h2>Branding</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="single_service2">
-                                    <div class="single_service_left">
-                                        <img src="assets/images/flaticon2.png" alt="" />
-                                    </div>
-                                    <div class="single_service_right">
-                                        <h2>Branding</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="single_service2">
-                                    <div class="single_service_left">
-                                        <img src="assets/images/flaticon3.png" alt="" />
-                                    </div>
-                                    <div class="single_service_right">
-                                        <h2>Branding</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="single_service2">
-                                    <div class="single_service_left">
-                                        <img src="assets/images/flaticon4.png" alt="" />
-                                    </div>
-                                    <div class="single_service_right">
-                                        <h2>Branding</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- End of Service2 Section -->		
-
-
-
-        <!-- Sections -->
-        <section id="price" class="price sections">
-
-
-            <div class="head_title text-center">
-                <h1>Affordable Services Package</h1>
-                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-            </div>
-            <!-- Example row of columns -->
-            <div class="cd-pricing-container cd-has-margins">
-                <div class="cd-pricing-switcher">
-                    <p class="fieldset">
-                        <input type="radio" name="duration-2" value="monthly" id="monthly-2" checked>
-                        <label for="monthly-2">Business</label>
-                        <input type="radio" name="duration-2" value="yearly" id="yearly-2">
-                        <label for="yearly-2">Community</label>
-                        <span class="cd-switch"></span>
-                    </p>
-                </div> <!-- .cd-pricing-switcher -->
-
-                <ul class="cd-pricing-list cd-bounce-invert">
-                    <li>
-                        <ul class="cd-pricing-wrapper">
-                            <li data-type="monthly" class="is-visible">
-                                <header class="cd-pricing-header">
-                                    <h2>Basic</h2>
-
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">30</span>
-                                        <span class="cd-duration">mo</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-
-                            <li data-type="yearly" class="is-hidden">
-                                <header class="cd-pricing-header">
-                                    <h2>Basic</h2>
-
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">320</span>
-                                        <span class="cd-duration">yr</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-                        </ul> <!-- .cd-pricing-wrapper -->
-                    </li>
-
-                    <li class="cd-popular">
-                        <ul class="cd-pricing-wrapper">
-                            <li data-type="monthly" class="is-visible">
-                                <header class="cd-pricing-header">
-                                    <h2>Popular</h2>
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">60</span>
-                                        <span class="cd-duration">mo</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-
-                            <li data-type="yearly" class="is-hidden">
-                                <header class="cd-pricing-header">
-                                    <h2>Popular</h2>
-
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">630</span>
-                                        <span class="cd-duration">yr</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-                        </ul> <!-- .cd-pricing-wrapper -->
-                    </li>
-
-                    <li>
-                        <ul class="cd-pricing-wrapper">
-                            <li data-type="monthly" class="is-visible">
-                                <header class="cd-pricing-header">
-                                    <h2>Premier</h2>
-
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">90</span>
-                                        <span class="cd-duration">mo</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-
-                            <li data-type="yearly" class="is-hidden">
-                                <header class="cd-pricing-header">
-                                    <h2>Premier</h2>
-
-                                    <div class="cd-price">
-                                        <span class="cd-currency">$</span>
-                                        <span class="cd-value">950</span>
-                                        <span class="cd-duration">yr</span>
-                                    </div>
-                                </header> <!-- .cd-pricing-header -->
-
-                                <div class="cd-pricing-body">
-                                    <ul class="cd-pricing-features">
-                                        <li><em><i class="fa fa-check-circle"></i></em>20 Keyword</li>
-                                        <li><em><i class="fa fa-remove"></i></em>No Time Tracking</li>
-                                        <li><em><i class="fa fa-remove"></i></em>230 - Man Hour</li>
-                                        <li><em><i class="fa fa-check-circle"></i></em>News Letter Available</li>
-
-                                    </ul>
-                                </div> <!-- .cd-pricing-body -->
-
-                                <footer class="cd-pricing-footer">
-                                    <a class="cd-select" href="#">Purchase</a>
-                                </footer>  <!-- .cd-pricing-footer -->
-                            </li>
-                        </ul> <!-- .cd-pricing-wrapper -->
-                    </li>
-                </ul> <!-- .cd-pricing-list -->
-            </div> <!-- .cd-pricing-container -->	
-
-        </section>
-
         <!-- Sections -->
         <section id="business" class="portfolio sections">
             <div class="container">
                 <div class="head_title text-center">
-                    <h1>Our Business Analytics Platform</h1>
-                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                    <h1>NOS DIFFERENTS THESE </h1>
+                    <p>bievenue dans l'espace these polytehnique ou vous pouvez 
+                     effectuer vos recherches des differentes thesse 
+                     soutewnue au cour des annees le travail recompense toujours</p>
                 </div>
 
                 <div class="row">
@@ -544,8 +233,8 @@
                 <div class="row">
                     <div class="main_contact whitebackground">
                         <div class="head_title text-center">
-                            <h2>GET IN TOUCH</h2>
-                            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                            <h2>LAISER UN COMMENTAIRE</h2>
+                            <p> tout vos sugesion et vos impression sont les bienvenue veillez laiser un commentaire ou un remarque</p>
                         </div>
                         <div class="contact_content">
                             <div class="col-md-6">
@@ -573,13 +262,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="single_right_contact">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+                                    <p></p>
 
                                     <div class="contact_address margin-top-40">
-                                        <span>1600 Pennsylvania Ave NW, Washington,</span>
-                                        <span>DC 20500, United States of America.</span> 
-                                        <span class="margin-top-20">T: (202) 456-1111</span> 
-                                        <span>M: (202) 456-1212</span> 
+                                        <span></span>
+                                        <span></span> 
+                                        <span class="margin-top-20"></span> 
+                                        <span></span> 
                                     </div>
 
                                     <div class="contact_socail_bookmark">
@@ -644,11 +333,14 @@
 
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="menu-item">
-                                <h5>Newsletter</h5>
-                                <p>Insights await in your company's data. Bring them into focus with BlueLance.</p>
+                                <h5>envoie de these</h5>
+                                <p>envoie votre these s'il vous plait.</p>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter your email address">
-                                    <input type="submit" class="form-control" value="Use It Free">
+                                    <input type="file" name="th" class="form-control" placeholder="Enter  votre document">
+                                    <input type="text"  name="no"class="form-control" placeholder="Enter votre nom">
+                                    <input type="text" name="nom"class="form-control" placeholder="Enter le nom de l'encadrant">
+                                    <input type="date" name="date"class="form-control" placeholder="">
+                                    <input type="submit" class="form-control" value="valider">
                                 </div>
                             </div>
                         </div>
@@ -666,15 +358,8 @@
                     <div class="footer-wrapper">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-brand">
-                                <img src="assets/images/logo.png" alt="logo" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="copyright">
-                                <p>Made with <i class="fa fa-heart"></i> by <a target="_blank" href="https://bootstrapthemes.co"> Bootstrap Themes </a>2016. All rights reserved.</p>
-
+                                <p>Made with <i class="fa fa-heart"></i> by XYON CODE <a target="_blank" href="> XYON CODE </a>2016. All rights reserved.</p>co"
                             </div>
                         </div>
 

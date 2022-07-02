@@ -23,10 +23,22 @@ $checkconnexion->execute(array($user_mat));
 
     if ($checkconnexion->rowCount() == 1) {
         $check = $checkconnexion->fetch();
+
         //  var_dump (password_verify($user_pass, $check['PASSWORD']));
             // die; 
         if (password_verify($user_pass, $check['PASSWORD'])) {
-            header('location: page/memoire.php');
+
+            $_SESSION['auth'] = true;
+            $_SESSION['mat'] = $user_info['mat'];
+            $_SESSION['nom'] = $user_info['nom'];
+            $_SESSION['prenom'] = $user_info['prenom'];
+            $_SESSION['date'] = $user_info['date'];
+            $_SESSION['dep'] = $user_info['dep'];
+            $_SESSION['pwd'] = $user_info['pwd'];
+            $_SESSION['num'] = $user_info['num'];
+            $_SESSION['mail'] = $user_info['mail'];
+            $_SESSION['tof'] = $user_info['photo'];
+            header('location:memoire.php');
         }else{
             echo "<script> alert('Votre mot de passe est incorrect')</script>";
         }
@@ -39,6 +51,7 @@ $checkconnexion->execute(array($user_mat));
             echo "<script> alert('Une erreur est survenue')</script>";
         }
         }
+        
         ?>
         <!--xyoncode-->
         <!--var_dump ($checkconnexion->rowCount());

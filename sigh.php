@@ -4,6 +4,7 @@
       <?php
 //validation du formulaire
       if(isset($_POST['valider'])){   
+        $date = date('Y');
 // //verifier si l'utilisateur a completer tous ses champs 
           if(!empty($_POST['mat']) AND !empty($_POST['nom']) 
           AND!empty($_POST['prenom']) AND !empty($_POST['date'])
@@ -29,24 +30,35 @@ $check->execute(array($user_mat, $user_name, $user_prenom, $user_date, $user_dep
 if($check->rowCount() == 0){   
    // var_dump('bonjour') ;   
       //  die;  
+      if (!empty($_FILES)) {
+      $fname = $_FILES['fichier']['name'];
+      $fext = strrchr($fname, ".");
+      $f = array('.JPG','.jpg');
+      $dest = 'photos/'.$fname;
+      $femp = $_FILES['fichier']['tmp_name'];
+      $size = $_FILES['fichier']['size'];
+
+     if (in_array($fext,$f) AND $size <= 360000) {
+         if (move_uploaded_file($femp,$dest)) {
 $insert = $bdd->prepare('INSERT INTO utilisateur(ID, NOM, PRENOM, DATE_NAIS, DEPART, PASSWORD, NUM_TEL, EMAIL) VALUES(?, ?, ?, ?, ?, ?, ?,?)');
 $insert->execute(array($user_mat, $user_name, $user_prenom, $user_date, $user_dep, $user_pwd, $user_numero, $user_email));
 header('location:index.php');
                        
-   
-
-//verifier si l'utilisateur n'est pas déja inscrit
-            
-                }else {
-                    echo "<script> alert('cet utilisateur existe déja')</script>";
-                   }
-
-        //si le NOM et le prénom sont reconnu il ya cette erreur 
+}else {
+    echo "<script> alert('Une erreur ')</script>";
+   } 
+            }else {
+                 echo "<script> alert('On a besoin d'une photo de 60*60 maxi')</script>";
             }
-            else{
-                echo "<script> alert('Une erreur est survenue')</script>";
-            }
-            
+                //si le NOM et le prénom sont reconnu il ya cette erreur
+                    }
+                    else{
+                        echo "<script> alert('Une erreur est arriver')</script>";
+                    }
+                             //verifier si l'utilisateur n'est pas déja inscrit    
+                             }else {
+                                 echo "<script> alert('cet utilisateur existe déja')</script>";
+                             }
         //si tous les champs ne sont pas remplis il ya cette erreur 
         //   }
         //   else{
@@ -54,5 +66,5 @@ header('location:index.php');
         // }
 
 }
-
+      }
 //xyoncode-->
