@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    	<title>Developer</title>
+
+    	<!-- meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.theme.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- google font -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Rouge+Script" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Milonga' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+<div class="content-block" id="testimonials">
+            <header class="block-heading cleafix text-center">
+                <h1>What Clients Say</h1>
+                <!-- <p>Lorem Ipsum Text</p> -->
+            </header>
+            <div class="block-content text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                        	<div class="owl-carousel">
+								<div class="owl-item">
+									<div class="testimonial">
+                                        <img alt="Client Photo" src="img/testimonial_31-190x190.jpg">
+                                        <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet.</p>
+                                        <strong>Jhon Doe</strong><br>
+                                        <span>Head of Ideas, Technext</span>
+                                    </div>
+								</div>	<!-- owl-item -->
+								<div class="owl-item">
+									<div class="testimonial">
+                                        <img alt="Client Photo" src="img/testimonial_11-190x190.jpg">
+                                        <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet.</p>
+                                        <strong>Jane Doe</strong><br>
+                                        <span>CEO, Apple Inc</span>
+                                    </div>
+								</div>	<!-- owl-item -->
+								<div class="owl-item">
+									<div class="testimonial">
+                                        <img alt="Client Photo" src="img/testimonial_22-190x190.jpg">
+                                        <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet.</p>
+                                        <strong>Albert Doe</strong><br>
+                                        <span>Team Lead, Design Studio</span>
+                                    </div>
+								</div>	<!-- owl-item -->
+							</div>	<!-- owl-carousel -->
+						</div>	<!-- col-md-12 -->
+                    </div>	<!-- row -->
+                </div>	<!-- container -->
+            </div>	<!-- block-content -->
+        </div>	<!-- content-block -->
+</body>

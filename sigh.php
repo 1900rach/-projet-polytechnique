@@ -1,5 +1,6 @@
 <?php
-      require('database.php');
+session_start();
+      require('developer/database.php');
       ?>
       <?php
 //validation du formulaire
@@ -28,20 +29,23 @@ $check = $bdd->prepare('SELECT * FROM utilisateur WHERE ID=? AND NOM = ?  AND PR
 $check->execute(array($user_mat, $user_name, $user_prenom, $user_date, $user_dep,  $user_pwd, $user_numero, $user_email));
 //compte le nombre de fois où le serveur reconnait le même NOM et le même prénom déjà entré 
 if($check->rowCount() == 0){   
-   // var_dump('bonjour') ;   
-      //  die;  
+    // var_dump($_FILES) ;   
+    //    die;  
       if (!empty($_FILES)) {
       $fname = $_FILES['fichier']['name'];
       $fext = strrchr($fname, ".");
       $f = array('.JPG','.jpg');
-      $dest = 'photos/'.$fname;
+      $dest = 'photo/'.$fname;
       $femp = $_FILES['fichier']['tmp_name'];
       $size = $_FILES['fichier']['size'];
-
-     if (in_array($fext,$f) AND $size <= 360000) {
+            
+     if (in_array($fext,$f)AND $size <= 36000) {
+        
          if (move_uploaded_file($femp,$dest)) {
-$insert = $bdd->prepare('INSERT INTO utilisateur(ID, NOM, PRENOM, DATE_NAIS, DEPART, PASSWORD, NUM_TEL, EMAIL) VALUES(?, ?, ?, ?, ?, ?, ?,?)');
-$insert->execute(array($user_mat, $user_name, $user_prenom, $user_date, $user_dep, $user_pwd, $user_numero, $user_email));
+            
+$insert = $bdd->prepare('INSERT INTO utilisateur(ID, I_DEP, NOM, PRENOM, DATE_NAIS, PASSWORD, NUM_TEL, EMAIL, PHOTO) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+$insert->execute(array($user_mat, $user_dep, $user_name, $user_prenom, $user_date, $user_pwd, $user_numero, $user_email, $fname));
+       
 header('location:index.php');
                        
 }else {

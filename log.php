@@ -1,6 +1,6 @@
 <?php
   session_start();
-require('database.php');
+require('developer/database.php');
 ?>
 <?php
 //validation du formulaire
@@ -29,16 +29,17 @@ $checkconnexion->execute(array($user_mat));
         if (password_verify($user_pass, $check['PASSWORD'])) {
 
             $_SESSION['auth'] = true;
-            $_SESSION['mat'] = $user_info['mat'];
-            $_SESSION['nom'] = $user_info['nom'];
-            $_SESSION['prenom'] = $user_info['prenom'];
-            $_SESSION['date'] = $user_info['date'];
-            $_SESSION['dep'] = $user_info['dep'];
-            $_SESSION['pwd'] = $user_info['pwd'];
-            $_SESSION['num'] = $user_info['num'];
-            $_SESSION['mail'] = $user_info['mail'];
-            $_SESSION['tof'] = $user_info['photo'];
-            header('location:memoire.php');
+            $_SESSION['mat'] = $check['ID'];
+            $_SESSION['nom'] = $check['NOM'];
+            $_SESSION['prenom'] = $check['PRENOM'];
+            $_SESSION['date'] = $check['DATE_NAIS'];
+            $_SESSION['dep'] = $check['DEPART'];
+            $_SESSION['pwd'] = $check['PASSWORD'];
+            $_SESSION['num'] = $check['NUM_TEL'];
+            $_SESSION['mail'] = $check['EMAIL'];
+            $_SESSION['tof'] = $check['PHOTO'];
+            
+            header('location:developer/page.php');
         }else{
             echo "<script> alert('Votre mot de passe est incorrect')</script>";
         }

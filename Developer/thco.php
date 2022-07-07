@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('')
+require_once('database.php');
 if (empty($_SESSION)) {
     header('location: ../index.php');
 }
@@ -72,6 +72,20 @@ $req->execute(array($_SESSION['mat'], false));
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                         	<div class="owl-carousel">
+                                <?php
+                                   foreach ($req as $key) {
+                                   ?>
+                                        <div class="owl-item">
+									<div class="testimonial">
+                                        <img alt="Client Photo" src="../photo/pdf.jpeg"> 
+                                        <p><?= $key['NOM_T'] ?></p>
+                                        <strong><?= $key['NOM_ENCA_T'] ?></strong><br>
+                                        <span><?= $key['DES_T'] ?></span>
+                                    </div>
+								</div>
+                                   <?php
+                                   }
+                                 ?>
 								<div class="owl-item">
 									<div class="testimonial">
                                         <!-- <img alt="Client Photo" src="img/testimonial_31-190x190.jpg"> -->
@@ -80,24 +94,8 @@ $req->execute(array($_SESSION['mat'], false));
                                         <span>Head of Ideas, Technext</span>
                                     </div>
 								</div>	<!-- owl-item -->
-								<div class="owl-item">
-									<div class="testimonial">
-                                        <img alt="Client Photo" src="img/testimonial_11-190x190.jpg">
-                                        <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet.</p>
-                                        <strong>Jane Doe</strong><br>
-                                        <span>CEO, Apple Inc</span>
-                                    </div>
-								</div>
-                                	<!-- owl-item -->
-								<div class="owl-item">
-									<div class="testimonial">
-                                        <img alt="Client Photo" src="img/testimonial_22-190x190.jpg">
-                                        <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet.</p>
-                                        <strong>Albert Doe</strong><br>
-                                        <span>Team Lead, Design Studio</span>
-                                        
-                                    </div>
-								</div>	<!-- owl-item -->
+								
+                               
 							</div>	<!-- owl-carousel -->
 						</div>	<!-- col-md-12 -->
                     </div>	<!-- row -->

@@ -1,10 +1,4 @@
 
-<?hp
-session_start();
-if (empty($_SESSION['auth'])) {
-   header('location: ../page/index.php');
-}
-?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -55,11 +49,6 @@ if (empty($_SESSION['auth'])) {
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="social-contact">
-                             <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret"><?= $_SESSION['nom']; ?><i class="caret"></i></span><span class="table-img"><img style="border: 2px solid black" src="../<?= $_SESSION['tof'] ?>"></span></a>
-                                <a href="#"><i class="fa fa-envelope"></i>contact@softech.com</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,12 +73,10 @@ if (empty($_SESSION['auth'])) {
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="thco">tout les theses</a></li>
-                        <li><a href="toutth.php">theses en cours</a></li>
-                        <li><a href="toutth.php">galerie</a></li>
+                        <li><a href="tth.php">tout les theses</a></li>
                         <li><a href="toutth.php">notification</a></li>
                         <li><a href="toutth.php">publication</a></li>
-                        <li class="login"><a href="deconnexion.php">Sign out</a></li>
+                        <li class="login"><a href="index.php">connexion</a></li>
                     </ul>
 
                 </div><!-- /.navbar-collapse -->
@@ -109,16 +96,19 @@ if (empty($_SESSION['auth'])) {
                                     <p>Blue Lance transforms your company's data into rich visuals for you to collect and organize so you can focus on what matters to you. Stay in the know, spot trends as they happen, and push your business further.</p>
 
                                     <div class="row">
-                                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-                                            <div class="home-contact">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Enter your email address">
-                                                    <input type="submit" class="form-control" value="Use It Free">
-
-                                                </div><!-- /input-group -->
-
-
-                                            </div>
+                                    <div class="col-md-9"> 
+                        <form class="form-group" >
+                            <div class="col-md-6">
+                                <input style="background-color: rgba(0,0,0,0); color: black;"  class="form-control text-dark" type="text" arial-label="search"  placeholder="search">
+                            </div>
+                            <div class="col-md-3">    
+                                <button class=" form-control btn btn-success" type="submit">Envoyer</button>
+                            </div>    
+                                    </form>
+                        <!-- <form class="form-inline">
+                        <input type="text" name="se" class="form-controle mr-sm-2" placeholder="search">
+                            <button class="btn btn-primary" type="submit"></button> -->
+                            </div>
                                         </div>
                                     </div>
 
@@ -227,14 +217,13 @@ if (empty($_SESSION['auth'])) {
             </div> <!-- /container -->       
         </section>
 
-
         <section id="contact" class="contact sections">
             <div class="container">
                 <div class="row">
                     <div class="main_contact whitebackground">
                         <div class="head_title text-center">
-                            <h2>LAISER UN COMMENTAIRE</h2>
-                            <p> tout vos sugesion et vos impression sont les bienvenue veillez laiser un commentaire ou un remarque</p>
+                            <h2>LAISSER UN COMMENTAIRE</h2>
+                            <p>vos avis et vos suggesion sont attendus</p>
                         </div>
                         <div class="contact_content">
                             <div class="col-md-6">
@@ -262,20 +251,7 @@ if (empty($_SESSION['auth'])) {
                             </div>
                             <div class="col-md-6">
                                 <div class="single_right_contact">
-                                    <p></p>
-
-                                    <div class="contact_address margin-top-40">
-                                        <span></span>
-                                        <span></span> 
-                                        <span class="margin-top-20"></span> 
-                                        <span></span> 
-                                    </div>
-
-                                    <div class="contact_socail_bookmark">
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-google"></i></a>
-                                    </div>
+                                   
 
                                 </div>
                             </div>
@@ -333,14 +309,11 @@ if (empty($_SESSION['auth'])) {
 
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="menu-item">
-                                <h5>envoie de these</h5>
-                                <p>envoie votre these s'il vous plait.</p>
+                                <h5>Newsletter</h5>
+                                <p>Insights await in your company's data. Bring them into focus with BlueLance.</p>
                                 <div class="input-group">
-                                    <input type="file" name="th" class="form-control" placeholder="Enter  votre document">
-                                    <input type="text"  name="no"class="form-control" placeholder="Enter votre nom">
-                                    <input type="text" name="nom"class="form-control" placeholder="Enter le nom de l'encadrant">
-                                    <input type="date" name="date"class="form-control" placeholder="">
-                                    <input type="submit" class="form-control" value="valider">
+                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <input type="submit" class="form-control" value="Use It Free">
                                 </div>
                             </div>
                         </div>
@@ -358,8 +331,15 @@ if (empty($_SESSION['auth'])) {
                     <div class="footer-wrapper">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-brand">
+                                <img src="" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="copyright">
-                                <p>Made with <i class="fa fa-heart"></i> by XYON CODE <a target="_blank" href="> XYON CODE </a>2016. All rights reserved.</p>co"
+                                <p>Made with <i class="fa fa-heart"></i> xyoncode <a target="_blank" href=""> </a>2022. All rights reserved.</p>
+
                             </div>
                         </div>
 

@@ -1,6 +1,7 @@
 
 <?php 
       require 'sigh.php';
+	  $req = $bdd->query("SELECT * FROM DEPARTEMENT");
  ?>
 
 <!doctype html>
@@ -25,7 +26,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form  method="post" action="" class="signin-form">
+		      	<form  method="post" action="" enctype="multipart/form-data" class="signin-form">
 		      		<div class="form-group d-flex">
 						<div class="col-md-6">
 							<input type="text" class="form-control" name="mat" placeholder="matricule" required>
@@ -48,10 +49,13 @@
 					<div class="col-md-6 ">
 						<select name="dep" required="" class="form-control text-dark" style="color: black;">
 						<option>departement</option>
-						<option value="GC">genie civil et urbain</option>
-						<option value="GTEL/GEL">genie electrique et des telecommunication</option>
-						<option value="GIN">genie informatique</option>
-						<option value="GI/GM">genie industriel et mecanique</option> 	
+						<?php 
+							foreach ($req as $key) {
+								?>
+									<option value="<?= $key['I_DEP'] ?>"><?= $key['NOM_DEP'] ?></option>
+								<?php
+							}
+						?>
 						</select>
 					</div>
 					<div class="col-md-6">
@@ -69,7 +73,7 @@
 			  </div>
 			  <div class="form-group d-flex">
 			  <div class="col-md-6 ">
-				<input type="file"  class="form-control" placeholder="ajouter une photo " name="fichier" required="">
+				<input type="file"  class="form-control" placeholder="ajouter une photo " name="fichier" required="" class="form-control-file" >
 				</div>
 	            <div class="col-md-6">
 				<input type="submit" name="valider" class="form-control btn btn-primary submit px-3" value="s'inscrire" >
